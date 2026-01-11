@@ -1,0 +1,40 @@
+in bast test class
+
+
+
+
+  @BeforeClass
+    public void beforeClass() throws IOException
+    {
+        System.out.println("BeforeClass");
+
+ 1]   // run a script using prperty File (add address or delete address)
+        
+//     String browser = fileUtility.readDataFromPropertyFile("browserName");     
+//        String url = fileUtility.readDataFromPropertyFile("url");
+/   
+      
+
+2] we take parameter  //for parameter (by using ouside run the script using CMD)
+
+
+       String browser= System.getProperty("browserName");
+      String  url= System.getProperty("url");
+
+Step:
+1] open cmd
+2] cd C:\Users\user\eclipse-workspace\com.Shopperstack_M4(Project name)
+
+3] mvn clean test -DbrowserName=chrome -Durl=https://www.shoppersstack.com
+
+
+4] i want to only run Add address Script
+  mvn clean test -DbrowserName=chrome -Durl=https://www.shopperstack.com -Dtest=TC_001_verify_user_is_able_to_add_address_or_not_Test
+
+5] i want to run only delete address Script
+mvn clean test -DbrowserName=chrome -Durl=https://www.shopperstack.com -Dtest=TC_002_verify_user_is_able_to_delete_address_or_not_Test
+
+
+
+
+
